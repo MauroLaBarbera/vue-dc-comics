@@ -35,8 +35,11 @@ export default {
 
 
 a {
-  color: #000;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {

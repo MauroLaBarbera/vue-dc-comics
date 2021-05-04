@@ -37,11 +37,13 @@ header {
     font-size: 13px;
 }
 
+a {
+    color: #000;
+}
 
 .menu ul {
     display: flex;
     justify-content: center;
-    list-style: none;
 }
 
 .menu li {
@@ -49,7 +51,7 @@ header {
 }
 
 .menu li:nth-child(2) {
-    border-bottom: 5px solid blue;
+    border-bottom: 5px solid dodgerblue;
 }
 
 .img {
