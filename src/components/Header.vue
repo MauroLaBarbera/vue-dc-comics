@@ -5,16 +5,7 @@
       </div>
       <div class="menu">
           <ul>
-              <li><a href="/">characters</a></li>
-              <li><a href="/">comics</a></li>
-              <li><a href="/">movies</a></li>
-              <li><a href="/">tv</a></li>
-              <li><a href="/">games</a></li>
-              <li><a href="/">collectibles</a></li>
-              <li><a href="/">videos</a></li>
-              <li><a href="/">fans</a></li>
-              <li><a href="/">news</a></li>
-              <li><a href="/">shop</a></li>
+              <li v-for="(link, index) in links" :key="index" :class="{active: link.current}" ><a :class="{color: link.current}" :href="link.url">{{ link.text }}</a></li>
           </ul>
       </div>
   </header>
@@ -23,6 +14,22 @@
 <script>
 export default {
     name: 'Header',
+    data() {
+        return {
+            links: [
+                { text: 'characters', url: '/characters', current: false },
+                { text: 'comics', url: '/comics', current: true },
+                { text: 'movies', url: '/movies', current: false },
+                { text: 'tv', url: '/tv', current: false },
+                { text: 'games', url: '/games', current: false },
+                { text: 'collectibles', url: '/collectibles', current: false },
+                { text: 'videos', url: '/videos', current: false },
+                { text: 'fans', url: '/fans', current: false },
+                { text: 'news', url: '/news', current: false },
+                { text: 'shop', url: '/shop', current: false },
+            ],
+        };
+    },
 }
 </script>
 
@@ -50,7 +57,11 @@ a {
     margin-left: 20px;
 }
 
-.menu li:nth-child(2) {
+.color {
+    color: dodgerblue;
+}
+
+.active {
     border-bottom: 5px solid dodgerblue;
 }
 
